@@ -15,7 +15,7 @@ class HomeController extends Controller
     public function index(Request $request)
     {
         $usersv                 = \Session::get('users');
-        if($usersv->token){
+        if($usersv){
             $client = new \GuzzleHttp\Client();
             $url = $this->urls."users/".$usersv->id;
             $headers = [
